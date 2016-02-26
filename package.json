@@ -1,0 +1,52 @@
+{
+  "name": "til-angular2",
+  "version": "0.0.1",
+  "description": "A site used to keep track of snippets of knowledge.",
+  "main": "index.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "postinstall": "npm run typings install",
+    "tsc": "tsc",
+    "tsc:w": "tsc -w",
+    "lite": "node node_modules/lite-server/bin/lite-server",
+    "serve": "node node_modules/http-server/bin/http-server",
+    "start": "concurrent \"npm run tsc:w\" \"npm run lite\" ",
+    "typings": "node node_modules/typings/dist/bin/typings"
+  },
+  "keywords": [
+    "angular2",
+    "til",
+    "learning"
+  ],
+  "dependencies": {
+    "angular2": "2.0.0-beta.7",
+    "es6-promise": "^3.1.2",
+    "es6-shim": "0.33.3",
+    "lodash": "^4.5.1",
+    "mathjs": "^2.7.0",
+    "ng2-bootstrap": "^1.0.5",
+    "reflect-metadata": "0.1.2",
+    "rxjs": "5.0.0-beta.2",
+    "systemjs": "0.19.22",
+    "zone.js": "0.5.15"
+  },
+  "devDependencies": {
+    "amd-optimize": "^0.6.1",
+    "bower": "^1.7.7",
+    "browserify": "^13.0.0",
+    "concurrently": "^2.0.0",
+    "http-server": "^0.9.0",
+    "jasmine-core": "^2.4.1",
+    "less": "^2.6.0",
+    "lite-server": "^2.1.0",
+    "live-server": "^0.9.2",
+    "lodash": "^4.5.1",
+    "node-livereload": "^0.6.0",
+    "tsify": "^0.13.2",
+    "typescript": "^1.8.2",
+    "typings": "^0.6.8",
+    "vinyl-source-stream": "^1.1.0"
+  },
+  "author": "Mark Todd",
+  "license": "MIT"
+}

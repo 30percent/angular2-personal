@@ -1,0 +1,52 @@
+<!--
+Based on Angular2 Tour of Heroes by John Papa @ https://github.com/johnpapa/angular2-tour-of-heroes
+----
+An attempt to comply with Apache License
+Changes:
+    1. Added Bootstrap styling
+    2. Removal of global styles
+    3. Migrated transliterated js to its own directory
+----
+With love (or something),
+Mark Todd
+-->
+<html>
+<head>
+    <title>Angular 2 QuickStart</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <base href="/">
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet">
+    <!-- 1. Load libraries -->
+    <!-- IE required polyfills, in this exact order -->
+    <script src="node_modules/es6-shim/es6-shim.min.js"></script>
+    <script src="node_modules/systemjs/dist/system-polyfills.js"></script>
+
+    <script src="node_modules/angular2/bundles/angular2-polyfills.js"></script>
+    <script src="node_modules/systemjs/dist/system.src.js"></script>
+    <script src="node_modules/rxjs/bundles/Rx.js"></script>
+    <script src="node_modules/angular2/bundles/angular2.js"></script>
+    <script src="node_modules/angular2/bundles/router.js"></script>
+    <script src="node_modules/mathjs/dist/math.js"></script>
+    <script src="node_modules/lodash/lodash.js"></script>
+    <script src="vendor/abcjs_editor_2.3-min.js"></script>
+</head>
+
+<body>
+<my-app>
+    Loading... :(
+</my-app>
+<!-- 2. Configure SystemJS -->
+<script>
+    System.config({
+        packages: {
+            js: {
+                format: 'register',
+                defaultExtension: 'js'
+            }
+        }
+    });
+    System.import('./js/main')
+            .then(null, console.error.bind(console));
+</script>
+
+</body>
