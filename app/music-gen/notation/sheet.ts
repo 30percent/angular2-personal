@@ -133,7 +133,8 @@ export class ABCSheet extends BasicSheet{
             T: this.title,
             M: "4/4",
             C: this.author,
-            K: this.key.baseNote.toUpperCase(),
+            //K: this.key.baseNote.toUpperCase(),
+            K: "C", // we assume for now C due to accidentals being created via Key.ts (oops)
             L: "4/4"
         };
         var final : string = _.reduce(options, (result : string, value, key) =>{

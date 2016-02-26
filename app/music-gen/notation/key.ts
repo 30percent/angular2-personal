@@ -44,7 +44,7 @@ var MajorKey = [0,2,4,5,7,9,11],
  */
 export class Key {
     baseInd: number;
-
+    private _octaves: number;
     /**
      *
      * @param baseNote The "base" for the key
@@ -74,14 +74,14 @@ export class Key {
     // we fail silently, I don't like throwing though; maybe alternate solution?
     set octaves(newOct: number) {
         if(newOct > 0 && newOct < 4){
-            this.octaves = newOct;
-        } else if(this.octaves == null){
-            this.octaves = 1;
+            this._octaves = newOct;
+        } else if(this._octaves == null){
+            this._octaves = 1;
         }
     }
 
     get octaves() {
-        return this.octaves;
+        return this._octaves;
     }
 
     /**

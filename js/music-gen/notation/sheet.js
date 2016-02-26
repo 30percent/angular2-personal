@@ -140,7 +140,8 @@ System.register([], function(exports_1, context_1) {
                         T: this.title,
                         M: "4/4",
                         C: this.author,
-                        K: this.key.baseNote.toUpperCase(),
+                        //K: this.key.baseNote.toUpperCase(),
+                        K: "C",
                         L: "4/4"
                     };
                     var final = _.reduce(options, function (result, value, key) {

@@ -70,15 +70,15 @@ System.register([], function(exports_1, context_1) {
                 };
                 Object.defineProperty(Key.prototype, "octaves", {
                     get: function () {
-                        return this.octaves;
+                        return this._octaves;
                     },
                     // we fail silently, I don't like throwing though; maybe alternate solution?
                     set: function (newOct) {
                         if (newOct > 0 && newOct < 4) {
-                            this.octaves = newOct;
+                            this._octaves = newOct;
                         }
-                        else if (this.octaves == null) {
-                            this.octaves = 1;
+                        else if (this._octaves == null) {
+                            this._octaves = 1;
                         }
                     },
                     enumerable: true,

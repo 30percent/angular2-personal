@@ -18,26 +18,7 @@ class ISheet {
 @Component({
     selector: 'sheet-music-generator',
     inputs: ['sheetName'],
-    template: `<div>
-        <div *ngIf="showEditor">
-            <label>
-                Title:
-                <input type="text" [(ngModel)]="sheet.title">
-            </label> <br />
-            <label>
-                Note Equation:
-                <input type="text" [(ngModel)]="sheet.noteEQ">
-            </label>
-            <label>
-                Length Equation:
-                <input type="text" [(ngModel)]="sheet.lengthEQ">
-            </label>
-            <button (click)="generateSVG(sheet)">Generate Sheet!</button>
-            <button (click)="generateMidi(sheet)">Create a Midi</button>
-        </div>
-        <button (click)="showEditor = !showEditor">Edit</button>
-        <div id="sheetout"></div>
-    </div>`,
+    templateUrl: "app/music-create.component.html",
     styles: []
 })
 export class MusicCreateComponent implements OnInit {
@@ -51,7 +32,7 @@ export class MusicCreateComponent implements OnInit {
         this.sheet.noteEQ = "x";
         this.showEditor = false;
         this.myABC = new ABCSheet(new Key("d", undefined, 1), "No Title");
-        this.generateSVG(this.sheet);
+        this.createSVG(this.sheet);
     }
     constructor (
         private _routeParams: RouteParams
@@ -61,7 +42,7 @@ export class MusicCreateComponent implements OnInit {
         this.myABC.key.octaves = sheet.octaves; //we're probably breaking some serious rules here...
         return generate(this.myABC, sheet);
     }
-    generateSVG(sheet:ISheet) {
+    createSVG(sheet:ISheet) {
         ABCJS.renderAbc("sheetout", this.generateMusic(sheet));
     }
     createMidi(sheet: ISheet) {

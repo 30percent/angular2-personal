@@ -66,14 +66,14 @@ System.register(['angular2/core', "angular2/router", "./music-gen/notation/key",
                     this.sheet.noteEQ = "x";
                     this.showEditor = false;
                     this.myABC = new sheet_1.ABCSheet(new key_1.Key("d", undefined, 1), "No Title");
-                    this.generateSVG(this.sheet);
+                    this.createSVG(this.sheet);
                 };
                 MusicCreateComponent.prototype.generateMusic = function (sheet) {
                     this.myABC.title = sheet.title;
                     this.myABC.key.octaves = sheet.octaves; //we're probably breaking some serious rules here...
                     return generate(this.myABC, sheet);
                 };
-                MusicCreateComponent.prototype.generateSVG = function (sheet) {
+                MusicCreateComponent.prototype.createSVG = function (sheet) {
                     ABCJS.renderAbc("sheetout", this.generateMusic(sheet));
                 };
                 MusicCreateComponent.prototype.createMidi = function (sheet) {
@@ -83,7 +83,7 @@ System.register(['angular2/core', "angular2/router", "./music-gen/notation/key",
                     core_1.Component({
                         selector: 'sheet-music-generator',
                         inputs: ['sheetName'],
-                        template: "<div>\n        <div *ngIf=\"showEditor\">\n            <label>\n                Title:\n                <input type=\"text\" [(ngModel)]=\"sheet.title\">\n            </label> <br />\n            <label>\n                Note Equation:\n                <input type=\"text\" [(ngModel)]=\"sheet.noteEQ\">\n            </label>\n            <label>\n                Length Equation:\n                <input type=\"text\" [(ngModel)]=\"sheet.lengthEQ\">\n            </label>\n            <button (click)=\"generateSVG(sheet)\">Generate Sheet!</button>\n            <button (click)=\"generateMidi(sheet)\">Create a Midi</button>\n        </div>\n        <button (click)=\"showEditor = !showEditor\">Edit</button>\n        <div id=\"sheetout\"></div>\n    </div>",
+                        templateUrl: "app/music-create.component.html",
                         styles: []
                     }), 
                     __metadata('design:paramtypes', [router_1.RouteParams])
